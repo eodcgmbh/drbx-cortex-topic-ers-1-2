@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY rdf  "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY owl  "http://www.w3.org/2002/07/owl#">
+  <!ENTITY drb  "http://www.gael.fr/drb#">
+  <!ENTITY envisat "http://www.esa.int/envisat#">
+  <!ENTITY img  "http://www.gael.fr/drb/image#">
+  <!ENTITY nc "http://www.unidata.ucar.edu/netcdf#">
+]>
+
+<rdf:RDF xmlns:rdf  = "&rdf;"
+         xmlns:rdfs = "&rdfs;"
+         xmlns:owl  = "&owl;"
+         xmlns:nc   = "&nc;"
+         xmlns:drb  = "&drb;"
+         xmlns:envisat = "&envisat;"
+         xmlns:img  = "&img;">
+
+   <owl:Ontology rdf:about="&ers12;"/>
+
+
+   <owl:Class rdf:about="&ers12;productASPS">
+      <rdfs:label xml:lang="en">ERS 1 and ERS 2 ASPS.H, ASPS.N products</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&nc;netCDF"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>ASPS20_(H|N)_[0-9]{12}.nc</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>
+
+</rdf:RDF>
