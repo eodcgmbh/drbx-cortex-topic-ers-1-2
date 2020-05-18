@@ -4,7 +4,7 @@
   <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
   <!ENTITY owl  "http://www.w3.org/2002/07/owl#">
   <!ENTITY drb  "http://www.gael.fr/drb#">
-  <!ENTITY envisat "http://www.esa.int/envisat#">
+  <!ENTITY ers12 "http://esa.int/ers#">
   <!ENTITY img  "http://www.gael.fr/drb/image#">
   <!ENTITY nc "http://www.unidata.ucar.edu/netcdf#">
 ]>
@@ -14,7 +14,7 @@
          xmlns:owl  = "&owl;"
          xmlns:nc   = "&nc;"
          xmlns:drb  = "&drb;"
-         xmlns:envisat = "&envisat;"
+         xmlns:ers12 = "&ers12;"
          xmlns:img  = "&img;">
 
    <owl:Ontology rdf:about="&ers12;"/>
