@@ -20,6 +20,11 @@
    <owl:Ontology rdf:about="&ers12;"/>
 
 
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--             ERS.ASPS.level2               -->
+   <!--                                           -->
+   <!-- ========================================= -->
    <owl:Class rdf:about="&ers12;productASPS">
       <rdfs:label xml:lang="en">ERS 1 and ERS 2 ASPS.H, ASPS.N products</rdfs:label>
       <rdfs:comment xml:lang="en">
@@ -29,5 +34,45 @@
          <drb:nameMatch>ASPS20_(H|N)_[0-9]{12}.nc</drb:nameMatch>
       </drb:signature>
    </owl:Class>
+   
+
+   
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--               ERS.ATSR                    -->
+   <!--                                           -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&ers12;productATSR">
+      <rdfs:label xml:lang="en">Envisat ATSR L1B and L2 Products in Enivsat Format</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AT[0-9]{1}_(TOA_1P|NR__2P|AR__2P)....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.E[0-9]{1}</drb:nameMatch>
+      </drb:signature>
+      <drb:schemaLocation>
+          xsd/atsr.xsd
+      </drb:schemaLocation>
+      <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
+   </owl:Class>   
+   
+   
+   
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--             ERS.REAPER                    -->
+   <!--                                           -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&ers12;productRA">
+      <rdfs:label xml:lang="en">ERS Altimetry Reprocessed Products</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&nc;netCDF"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>E[0-9]{1}_REAP_ERS_ALT_2(_|S|M)_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_RP[0-9]{2}(?i)\.nc</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>   
 
 </rdf:RDF>
