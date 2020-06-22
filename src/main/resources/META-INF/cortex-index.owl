@@ -44,7 +44,17 @@
    <!-- ========================================= -->
 
    <owl:Class rdf:about="&ers12;productATSR">
-      <rdfs:label xml:lang="en">Envisat ATSR L1B and L2 Products in Enivsat Format</rdfs:label>
+      <rdfs:label xml:lang="en">ERS ATSR L1B and L2 Products in Enivsat Format (zip Archive)</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;zip"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AT[0-9]{1}_(TOA_1P|NR__2P|AR__2P)....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}.*\.zip</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>   
+   
+   <owl:Class rdf:about="&ers12;productATSRe">
+      <rdfs:label xml:lang="en">ERS ATSR L1B and L2 Products in Enivsat Format</rdfs:label>
       <rdfs:comment xml:lang="en">
       </rdfs:comment>
       <rdfs:subClassOf rdf:resource="&drb;item"/>
