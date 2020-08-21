@@ -1,0 +1,2273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sdf="http://www.gael.fr/2004/12/drb/sdf" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- ========================================= -->
+  <!--           MAIN PRODUCT HEADER             -->
+  <!-- ========================================= -->
+  <xs:complexType name="MPH_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">MPH</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PRODUCT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Product File name</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>62</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PROC_STAGE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Processing Stage Flag</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="REF_DOC" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Reference Document Describing Product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>23</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ACQUISITION_STATION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Acquisition Station ID</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">62</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>20</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PROC_CENTER" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Processing Center ID which generated current product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">13</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PROC_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC Time of Processing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SOFTWARE_VER" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Software Version number of processing software</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>14</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SENSING_START" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC start time of data sensing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">56</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SENSING_STOP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC stop time of data sensing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PHASE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Phase</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">47</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CYCLE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Cycle</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">6</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="REL_ORBIT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Start relative orbit number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ABS_ORBIT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Start absolute orbit number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="STATE_VECTOR_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC of ENVISAT state vector</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">19</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DELTA_UT1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">DUT1=UT1-UTC</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="X_POSITION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Y_POSITION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Z_POSITION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="X_VELOCITY" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Y_VELOCITY" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Z_VELOCITY" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VECTOR_SOURCE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Source of Orbit Vectors</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UTC_SBT_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC time corresponding to SBT below</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">55</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SAT_BINARY_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Satellite Binary Time (SBT)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CLOCK_STEP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Clock Step Size</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">5</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LEAP_UTC" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC time of the occurrence of the Leap Second</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">43</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LEAP_SIGN" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Leap second sign</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LEAP_ERR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Leap second error</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PRODUCT_ERR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">1 or 0. If 1, errors have been reported in the product. User should then refer to the SPH or Summary Quality ADS of the product for details of the error condition. If not used, set to 0.r</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">53</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TOT_SIZE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total Size Of Product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>21</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SPH_SIZE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length Of SPH</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_DSD" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of DSDs</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DSD_SIZE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length of Each DSD</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_DATA_SETS" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of DSs attached</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">42</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ========================================= -->
+  <!--         SPECIFIC PRODUCT HEADER           -->
+  <!--               ATSR PRODUCTS               -->
+  <!-- ========================================= -->
+  <xs:complexType name="SPH_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">SPH</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SPH_DESCRIPTOR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">SPH Descriptor</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>28</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="STRIPLINE_CONTINUITY_INDICATOR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Value: 0= No stripline continuity, the product is a complete segment. Other: Stripline Counter</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">31</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SLICE_POSITION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Value: +001 to NUM_SLICES. Default value if no stripline continuity = +001</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_SLICES" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of slices in this stripline.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_LINE_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">First Zero Doppler Azimuth time of product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">17</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_LINE_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Last Zero Doppler Azimuth time of product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_FIRST_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the first sample of the first line.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_FIRST_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the first sample of the first line.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">17</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_MID_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the middle sample of the first line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_MID_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the middle sample of the first line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_LAST_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the last sample of the first line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_LAST_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the last sample of the first line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_FIRST_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the first sample of the last line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_FIRST_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the first sample of the last line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_MID_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the middle sample of the last line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">13</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_MID_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the middle sample of the last line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_LAST_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the last sample of the last line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_LAST_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the last sample of the last line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MIN_FPA_BASEPLATE_TEM" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Minimum FPA baseplate temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">73</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MIN_12_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Minimum 12 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">28</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MIN_11_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Minimum 11 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">28</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MIN_3_7_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Minimum 3.7 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">29</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MIN_1_6_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Minimum 1.6 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">29</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MIN_0_87_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Minimum 0.87 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">30</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MAX_FPA_BASEPLATE_TEM" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum FPA baseplate temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">22</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MAX_12_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum 12 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">28</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MAX_11_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum 11 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">28</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MAX_3_7_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum 3.7 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">29</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MAX_1_6_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum 1.6 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">29</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MAX_0_87_MICRON_DETECTOR_TEMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum 0.87 micron detector temperature</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">30</sdf:padding>
+              <sdf:padding type="footer">55</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Fields 32: Spare. -->
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ========================================= -->
+  <!--        DATASET DESCRIPTION HEADER         -->
+  <!-- ========================================= -->
+  <xs:complexType name="DSD_HEADER_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">DSD HEADER</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: DS Name-->
+      <xs:element name="DS_NAME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Name describing the dataset.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>28</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>  
+      <!-- Field 2: DS Type-->
+      <xs:element name="DS_TYPE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Type of dataset. It can be M = Measurement, R = Reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>  
+      <!-- Field 3: External File Name -->
+      <xs:element name="FILENAME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Name of the reference file. Used if DS_TYPE is set to R. It is left justified with trailing blanks. The file name includes the extension. If not used it is set to 62 blanks</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>62</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>  
+      <!-- Field 4: DS Offset-->
+      <xs:element name="DS_OFFSET" type="xs:unsignedLong">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length in bytes of MPH + SPH (including DSDs) + size of previous datasets (if any)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>21</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>  
+      <!-- Field 5: DS Size-->
+      <xs:element name="DS_SIZE" type="xs:unsignedLong">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length in bytes of the attached dataset. Used if DS_TYPE is set to M. If not used set to 0</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>21</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>  
+      <!-- Field 6: Number of DSRs -->
+      <xs:element name="NUM_DSR" type="xs:unsignedLong">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of dataset records</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>  
+      <!-- Field 7: Length of DSRs -->
+      <xs:element name="DSR_SIZE" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length in bytes of the dataset record. If not used set to +0. If variable set to -1</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">41</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>  
+      <!-- Field 8: Spare -->
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ========================================= -->
+  <!--  ATS_AR__2P  SST_10ARCMIN_MDS_TYPE        -->
+  <!-- ========================================= -->
+  <xs:complexType name="SST_10ARCMIN_MDS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">SST_10ARCMIN_MDS_TYPE</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Data Record Time-->
+      <xs:element name="Nadir_UTC_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Record Quality Indicator -->
+      <xs:element name="Record_Quality_Indicator" type="xs:byte">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Record Quality Indicator (-1 if all measurement values are invalid, 0 otherwise)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>1</sdf:length>
+              <sdf:padding type="footer">3</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Spare -->
+      <!-- Field 4: Latitude of 10 arcmin cell -->
+      <xs:element name="Latitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Longitude of 10 arcmin cell -->
+      <xs:element name="Longitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Mean across-track pixel number-->
+      <xs:element name="Mean_across_track_pixel_number" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Mean across-track pixel number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: mean nadir-only SST in 10 arcmin cell -->
+      <xs:element name="Mean_nadir_only_SST" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">mean nadir-only SST in 10 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 8: Number of pixels in nadir-only average, 10 arcmin cell-->
+      <xs:element name="Number_pixels_nadir_only_average" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of pixels in nadir-only average, 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: Mean dual-view SST in 10 arcmin cell -->
+      <xs:element name="Mean_dual_view_SST" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">mean dual-view SST in 10 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 10: Number of pixels in dual-view average, 10 arcmin cell -->
+      <xs:element name="Number_pixels_dual_view_average" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of pixels in dual-view average, 10 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 11: AST confidence word -->
+      <xs:element name="AST_confidence_word" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">AST confidence word</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+			  <sdf:encoding>BINARY</sdf:encoding>
+			  <sdf:length>2</sdf:length>
+			  <sdf:occurrence>2</sdf:occurrence>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>  
+  <!-- ========================================= -->
+  <!--  ATS_AR__2P  SST_30ARCMIN_MDS_TYPE        -->
+  <!-- ========================================= -->
+  <xs:complexType name="SST_30ARCMIN_MDS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">SST_30ARCMIN_MDS_TYPE</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Data Record Time-->
+      <xs:element name="Nadir_UTC_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Record Quality Indicator -->
+      <xs:element name="Record_Quality_Indicator" type="xs:byte">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Record Quality Indicator (-1 if all measurement values are invalid, 0 otherwise)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>1</sdf:length>
+              <sdf:padding type="footer">3</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Spare -->
+      <!-- Field 4: Latitude of 30 arcmin cell -->
+      <xs:element name="Latitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Longitude of 30 arcmin cell -->
+      <xs:element name="Longitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Mean across-track pixel number-->
+      <xs:element name="Mean_across_track_pixel_number" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Mean across-track pixel number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: mean nadir-only SST in 30 arcmin cell -->
+      <xs:element name="Mean_nadir_only_SST" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">mean nadir-only SST in 30 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 8: standard deviation of nadir-only SST  -->
+      <xs:element name="Std_nadir_only_SST" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">standard deviation of nadir-only SST</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: Number of pixels in nadir-only average, 30 arcmin cell-->
+      <xs:element name="Number_pixels_nadir_only_average" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of pixels in nadir-only average, 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 10: Mean dual-view SST in 30 arcmin cell -->
+      <xs:element name="Mean_dual_view_SST" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">mean dual-view SST in 30 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 11: standard deviation of dual-view SST  -->
+      <xs:element name="Std_dual_view_SST" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">standard deviation of dual-view SST </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 12: Number of pixels in dual-view average, 30 arcmin cell -->
+      <xs:element name="Number_pixels_dual_view_average" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of pixels in dual-view average, 30 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 13: AST confidence word -->
+      <xs:element name="AST_confidence_word" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">AST confidence word</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+			  <sdf:encoding>BINARY</sdf:encoding>
+			  <sdf:length>2</sdf:length>
+			  <sdf:occurrence>2</sdf:occurrence>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 14: Cloud-top temperature, nadir view  -->
+      <xs:element name="Cloud_top_temperature_nadir_view" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Cloud-top temperature, nadir view</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 15: Percentage cloud-cover, nadir view -->
+      <xs:element name="Percentage_cloud_cover_nadir_view" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Percentage cloud-cover, nadir view</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 16: Cloud-top temperature, forward view  -->
+      <xs:element name="Cloud_top_temperature_forward_view" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Cloud-top temperature, forward view</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 17: Percentage cloud-cover, forward view -->
+      <xs:element name="Percentage_cloud_cover_forward_view" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Percentage cloud-cover, forward view</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>  
+  <!-- ========================================= -->
+  <!--  ATS_AR__2P  LST_10ARCMIN_MDS_TYPE        -->
+  <!-- ========================================= -->
+  <xs:complexType name="LST_10ARCMIN_MDS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">LST_10ARCMIN_MDS_TYPE</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Data Record Time-->
+      <xs:element name="Nadir_UTC_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Record Quality Indicator -->
+      <xs:element name="Record_Quality_Indicator" type="xs:byte">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Record Quality Indicator (-1 if all measurement values are invalid, 0 otherwise)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>1</sdf:length>
+              <sdf:padding type="footer">3</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Spare -->
+      <!-- Field 4: Latitude of 10 arcmin cell -->
+      <xs:element name="Latitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Longitude of 10 arcmin cell -->
+      <xs:element name="Longitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Mean across-track pixel number-->
+      <xs:element name="Mean_across_track_pixel_number" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Mean across-track pixel number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: mean land ST in 10 arcmin cell -->
+      <xs:element name="Mean_land_ST" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">mean land ST in 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 8: Number of pixels in land surface temperature average, 10 arcmin cell-->
+      <xs:element name="Number_pixels_land_surface_temperature_average" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of pixels in land surface temperature average, 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: Mean NDVI in 10 arcmin cell -->
+      <xs:element name="Mean_NDVI" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Mean NDVI in 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 10: Number of pixels in NDVI average, 10 arcmin cell -->
+      <xs:element name="Number_pixels_NDVI_average" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of pixels in NDVI average, 10 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 11: AST confidence word -->
+      <xs:element name="AST_confidence_word" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">AST confidence word</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+			  <sdf:encoding>BINARY</sdf:encoding>
+			  <sdf:length>2</sdf:length>
+			  <sdf:occurrence>2</sdf:occurrence>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>  
+  <!-- ========================================= -->
+  <!--  ATS_AR__2P  LST_30ARCMIN_MDS_TYPE        -->
+  <!-- ========================================= -->
+  <xs:complexType name="LST_30ARCMIN_MDS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">LST_30ARCMIN_MDS_TYPE</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Data Record Time-->
+      <xs:element name="Nadir_UTC_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Record Quality Indicator -->
+      <xs:element name="Record_Quality_Indicator" type="xs:byte">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Record Quality Indicator (-1 if all measurement values are invalid, 0 otherwise)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>1</sdf:length>
+              <sdf:padding type="footer">3</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Spare -->
+      <!-- Field 4: Latitude of 30 arcmin cell -->
+      <xs:element name="Latitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Longitude of 30 arcmin cell -->
+      <xs:element name="Longitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Mean across-track pixel number-->
+      <xs:element name="Mean_across_track_pixel_number" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Mean across-track pixel number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: mean land surface temperature in 30 arcmin cell -->
+      <xs:element name="Mean_land_surface_temperature" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">mean land surface temperature in 30 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 8: standard deviation of land ST  -->
+      <xs:element name="Std_land_ST" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">standard deviation of land ST</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: Number of pixels in land surface temperature average, 30 arcmin cell-->
+      <xs:element name="Number_pixels_land_surface_temperature_average" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of pixels in land surface temperature average, 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 10: Mean NDVI in 30 arcmin cell -->
+      <xs:element name="Mean_NDVI" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">mean NDVI in 30 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 11: standard deviation of NDVI  -->
+      <xs:element name="Std_NDVI" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">standard deviation of NDVI</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 12: Number of pixels in NDVI average, 30 arcmin cell -->
+      <xs:element name="Number_pixels_NDVI_average" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of pixels in NDVI average, 30 arcmin cell </xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 13: AST confidence word -->
+      <xs:element name="AST_confidence_word" type="xs:unsignedShort">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">AST confidence word</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+			  <sdf:encoding>BINARY</sdf:encoding>
+			  <sdf:length>2</sdf:length>
+			  <sdf:occurrence>2</sdf:occurrence>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 14: Cloud-top temperature, nadir view  -->
+      <xs:element name="Cloud_top_temperature_nadir_view" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Cloud-top temperature, nadir view</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 15: Percentage cloud-cover, nadir view -->
+      <xs:element name="Percentage_cloud_cover_nadir_view" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Percentage cloud-cover, nadir view</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 16: Cloud-top temperature, forward view  -->
+      <xs:element name="Cloud_top_temperature_forward_view" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Cloud-top temperature, forward view</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 17: Percentage cloud-cover, forward view -->
+      <xs:element name="Percentage_cloud_cover_forward_view" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Percentage cloud-cover, forward view</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>  
+  <!-- ========================================= -->
+  <!--  ATS_AR__2P BT_TOA_SEA_10ARCMIN_MDS_TYPE  -->
+  <!-- ========================================= -->
+  <xs:complexType name="BT_TOA_SEA_10ARCMIN_MDS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">BT_TOA_SEA_10ARCMIN_MDS_TYPE</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Data Record Time-->
+      <xs:element name="Nadir_UTC_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Record Quality Indicator -->
+      <xs:element name="Record_Quality_Indicator" type="xs:byte">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Record Quality Indicator (-1 if all measurement values are invalid, 0 otherwise)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>1</sdf:length>
+              <sdf:padding type="footer">3</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Spare -->
+      <!-- Field 4: Latitude of 10 arcmin cell -->
+      <xs:element name="Latitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Longitude of 10 arcmin cell -->
+      <xs:element name="Longitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+              <sdf:padding type="footer">98</sdf:padding>  <!-- In contrast to the product specification document, this MDSR has a length of 122, not 120, hence 98 instead of 96 -->
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6-42 not implemented -->
+    </xs:sequence>
+  </xs:complexType>  
+  <!-- ========================================= -->
+  <!--  ATS_AR__2P BT_TOA_SEA_30ARCMIN_MDS_TYPE  -->
+  <!-- ========================================= -->
+  <xs:complexType name="BT_TOA_SEA_30ARCMIN_MDS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">BT_TOA_SEA_30ARCMIN_MDS_TYPE</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Data Record Time-->
+      <xs:element name="Nadir_UTC_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Record Quality Indicator -->
+      <xs:element name="Record_Quality_Indicator" type="xs:byte">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Record Quality Indicator (-1 if all measurement values are invalid, 0 otherwise)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>1</sdf:length>
+              <sdf:padding type="footer">3</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Spare -->
+      <!-- Field 4: Latitude of 30 arcmin cell -->
+      <xs:element name="Latitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Longitude of 30 arcmin cell -->
+      <xs:element name="Longitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+              <sdf:padding type="footer">210</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6-86 not implemented -->
+    </xs:sequence>
+  </xs:complexType>  
+  <!-- ========================================= -->
+  <!--  ATS_AR__2P BT_TOA_LAND_10ARCMIN_MDS_TYPE  -->
+  <!-- ========================================= -->
+  <xs:complexType name="BT_TOA_LAND_10ARCMIN_MDS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">BT_TOA_LAND_10ARCMIN_MDS_TYPE</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Data Record Time-->
+      <xs:element name="Nadir_UTC_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Record Quality Indicator -->
+      <xs:element name="Record_Quality_Indicator" type="xs:byte">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Record Quality Indicator (-1 if all measurement values are invalid, 0 otherwise)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>1</sdf:length>
+              <sdf:padding type="footer">3</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Spare -->
+      <!-- Field 4: Latitude of 10 arcmin cell -->
+      <xs:element name="Latitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Longitude of 10 arcmin cell -->
+      <xs:element name="Longitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of 10 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+              <sdf:padding type="footer">114</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6-46 not implemented -->
+    </xs:sequence>
+  </xs:complexType>  
+  <!-- ========================================= -->
+  <!--  ATS_AR__2P BT_TOA_LAND_30ARCMIN_MDS_TYPE  -->
+  <!-- ========================================= -->
+  <xs:complexType name="BT_TOA_LAND_30ARCMIN_MDS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">BT_TOA_LAND_30ARCMIN_MDS_TYPE</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Data Record Time-->
+      <xs:element name="Nadir_UTC_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nadir_UTC_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Nadir UTC time in MJD format: Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Record Quality Indicator -->
+      <xs:element name="Record_Quality_Indicator" type="xs:byte">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Record Quality Indicator (-1 if all measurement values are invalid, 0 otherwise)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>1</sdf:length>
+              <sdf:padding type="footer">3</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Spare -->
+      <!-- Field 4: Latitude of 30 arcmin cell -->
+      <xs:element name="Latitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Longitude of 30 arcmin cell -->
+      <xs:element name="Longitude" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of 30 arcmin cell</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+              <sdf:padding type="footer">226</sdf:padding>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6-90 not implemented -->
+    </xs:sequence>
+  </xs:complexType>  
+  <!-- ========================================= -->
+  <!--           ELEMENT DEFINITION              -->
+  <!-- ========================================= -->
+  <xs:element name="ERS12FILE">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+            ERS ATSR L2 GRIDDED PRODUCT. Ony 10 arcmin and 30 arcmin grids contained.
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <!-- Main Product Header -->
+        <xs:element name="MPH" type="MPH_TYPE"/>
+        <!-- Specific Product Header -->
+        <xs:element name="SPH" type="SPH_TYPE"/>    
+        <!-- Dataset Descriptions -->  
+        <xs:element name="DSDS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="DSD" type="DSD_HEADER_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../MPH/NUM_DSD"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- SEA_ST_10_MIN_CELL_MDS -->  
+        <xs:element name="SST_10ARCMIN_MDSS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="SST_10ARCMIN_MDS" type="SST_10ARCMIN_MDS_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*SEA_ST_10_MIN_CELL_MDS.*')]/NUM_DSR"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- SEA_ST_30_MIN_CELL_MDS -->  
+        <xs:element name="SST_30ARCMIN_MDSS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="SST_30ARCMIN_MDS" type="SST_30ARCMIN_MDS_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*SEA_ST_30_MIN_CELL_MDS.*')]/NUM_DSR"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- LAND_ST_10_MIN_CELL_MDS -->  
+        <xs:element name="LST_10ARCMIN_MDSS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="LST_10ARCMIN_MDS" type="LST_10ARCMIN_MDS_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*LAND_ST_10_MIN_CELL_MDS.*')]/NUM_DSR"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- LAND_ST_30_MIN_CELL_MDS -->  
+        <xs:element name="LST_30ARCMIN_MDSS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="LST_30ARCMIN_MDS" type="LST_30ARCMIN_MDS_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*LAND_ST_30_MIN_CELL_MDS.*')]/NUM_DSR"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- BT_TOA_LAND_10_MIN_CELL_MDS -->  
+        <xs:element name="BT_TOA_LAND_10ARCMIN_MDSS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="BT_TOA_LAND_10ARCMIN_MDS" type="BT_TOA_LAND_10ARCMIN_MDS_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*BT_TOA_LAND_10_MIN_CELL_MDS.*')]/NUM_DSR"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- BT_TOA_LAND_30_MIN_CELL_MDS -->  
+        <xs:element name="BT_TOA_LAND_30ARCMIN_MDSS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="BT_TOA_LAND_30ARCMIN_MDS" type="BT_TOA_LAND_30ARCMIN_MDS_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*BT_TOA_LAND_30_MIN_CELL_MDS.*')]/NUM_DSR"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- BT_TOA_SEA_10_MIN_CELL_MDS -->  
+        <xs:element name="BT_TOA_SEA_10ARCMIN_MDSS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="BT_TOA_SEA_10ARCMIN_MDS" type="BT_TOA_SEA_10ARCMIN_MDS_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*BT_TOA_SEA_10_MIN_CELL_MDS.*')]/NUM_DSR"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- BT_TOA_SEA_30_MIN_CELL_MDS -->  
+        <xs:element name="BT_TOA_SEA_30ARCMIN_MDSS">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+                <xs:sequence>
+                   <xs:element name="BT_TOA_SEA_30ARCMIN_MDS" type="BT_TOA_SEA_30ARCMIN_MDS_TYPE"
+                               minOccurs="0" maxOccurs="unbounded">
+                       <xs:annotation>
+                           <xs:appinfo>
+                               <sdf:block>
+                                  <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*BT_TOA_SEA_30_MIN_CELL_MDS.*')]/NUM_DSR"/>
+                               </sdf:block>
+                           </xs:appinfo>
+                       </xs:annotation>
+                   </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

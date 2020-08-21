@@ -26,7 +26,7 @@
    <!--                                           -->
    <!-- ========================================= -->
    <owl:Class rdf:about="&ers12;productASPS">
-      <rdfs:label xml:lang="en">ERS 1 and ERS 2 ASPS.H, ASPS.N products</rdfs:label>
+      <rdfs:label xml:lang="en">ERS-1 and ERS-2 ASPS.H, ASPS.N products</rdfs:label>
       <rdfs:comment xml:lang="en">
       </rdfs:comment>
       <rdfs:subClassOf rdf:resource="&nc;netCDF"/>
@@ -44,25 +44,67 @@
    <!-- ========================================= -->
 
    <owl:Class rdf:about="&ers12;productATSR">
+      <rdfs:label xml:lang="en">ERS ATSR L1B and L2 Products in Enivsat Format</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AT[0-9]{1}_(TOA_1P|NR__2P|AR__2P)....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}.*</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>   
+   
+   <owl:Class rdf:about="&ers12;productATSR_zip">
       <rdfs:label xml:lang="en">ERS ATSR L1B and L2 Products in Enivsat Format (zip Archive)</rdfs:label>
       <rdfs:comment xml:lang="en">
       </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&ers12;productATSR"/>
       <rdfs:subClassOf rdf:resource="&drb;zip"/>
       <drb:signature rdf:parseType="Resource">
          <drb:nameMatch>AT[0-9]{1}_(TOA_1P|NR__2P|AR__2P)....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}.*\.zip</drb:nameMatch>
       </drb:signature>
    </owl:Class>   
    
-   <owl:Class rdf:about="&ers12;productATSRe">
-      <rdfs:label xml:lang="en">ERS ATSR L1B and L2 Products in Enivsat Format</rdfs:label>
+   <owl:Class rdf:about="&ers12;productATS_AR__2P">
+      <rdfs:label xml:lang="en">ERS-1/2 ATS_AR__2P in Enivsat Format</rdfs:label>
       <rdfs:comment xml:lang="en">
       </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&ers12;productATSR"/>
       <rdfs:subClassOf rdf:resource="&drb;item"/>
       <drb:signature rdf:parseType="Resource">
-         <drb:nameMatch>AT[0-9]{1}_(TOA_1P|NR__2P|AR__2P)....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.E[0-9]{1}</drb:nameMatch>
+         <drb:nameMatch>AT[0-9]{1}_AR__2P....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.E[0-9]{1}</drb:nameMatch>
       </drb:signature>
       <drb:schemaLocation>
-          xsd/atsr.xsd
+          xsd/ATS_AR__2P.xsd
+      </drb:schemaLocation>
+      <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
+   </owl:Class>   
+   
+   <owl:Class rdf:about="&ers12;productATS_NR__2P">
+      <rdfs:label xml:lang="en">ERS-1/2 ATS_NR__2P in Enivsat Format</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&ers12;productATSR"/>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AT[0-9]{1}_NR__2P....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.E[0-9]{1}</drb:nameMatch>
+      </drb:signature>
+      <drb:schemaLocation>
+          xsd/ATS_NR__2P.xsd
+      </drb:schemaLocation>
+      <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
+   </owl:Class>   
+   
+   <owl:Class rdf:about="&ers12;productATS_TOA_1P">
+      <rdfs:label xml:lang="en">ERS-1/2 ATS_TOA_1P in Enivsat Format</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&ers12;productATSR"/>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AT[0-9]{1}_TOA_1P....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.E[0-9]{1}</drb:nameMatch>
+      </drb:signature>
+      <drb:schemaLocation>
+          xsd/ATS_TOA_1P.xsd
       </drb:schemaLocation>
       <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
    </owl:Class>   
